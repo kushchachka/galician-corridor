@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b4vbkfepe68yw"]
+[gd_scene format=3 uid="uid://c010d86yrylbh"]
 
 [ext_resource type="Script" uid="uid://4q3reatna78s" path="res://scenes/player.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cn5lye3bu6tcp" path="res://assets/Girl_2/Attack.png" id="2_fhl08"]
@@ -296,7 +296,7 @@ position = Vector2(1.8000107, -9.999985)
 scale = Vector2(0.36718753, 0.40234375)
 sprite_frames = SubResource("SpriteFrames_l8h54")
 animation = &"idle"
-frame_progress = 0.6081991
+frame_progress = 0.20497258
 script = SubResource("GDScript_tuyoq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=39389995]
