@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4vbkfepe68yw"]
 
-[ext_resource type="Script" uid="uid://bggq7bvqbdaua" path="res://Player/player.gd" id="1_k53q1"]
+[ext_resource type="Script" uid="uid://4q3reatna78s" path="res://scenes/player.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cn5lye3bu6tcp" path="res://assets/Girl_2/Attack.png" id="2_fhl08"]
 [ext_resource type="Texture2D" uid="uid://kkxi3ptofice" path="res://assets/Girl_2/Dialogue.png" id="3_vtle1"]
 [ext_resource type="Texture2D" uid="uid://cfl4rhjk40nq8" path="res://assets/Girl_2/Idle.png" id="4_od3ui"]
@@ -269,14 +269,38 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_tuyoq"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Player" type="CharacterBody2D" unique_id=26899802]
-script = ExtResource("1_k53q1")
+position = Vector2(290.99997, 538.99994)
+scale = Vector2(5, 5)
+script = ExtResource("1_qlg0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093511946]
 shape = SubResource("CapsuleShape2D_hvfyp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=948079199]
-position = Vector2(-0.9999995, -10)
+position = Vector2(1.8000107, -9.999985)
 scale = Vector2(0.36718753, 0.40234375)
 sprite_frames = SubResource("SpriteFrames_l8h54")
-animation = &"walked"
+animation = &"idle"
+frame_progress = 0.6081991
+script = SubResource("GDScript_tuyoq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=39389995]
+position = Vector2(1.0000052, -9.599988)
+zoom = Vector2(2, 2)
+process_callback = 0
+limit_enabled = false
