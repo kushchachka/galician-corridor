@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c6ua310ts6q4e" path="res://scenes/tile_map_layer.tscn" id="1_0wfyh"]
 [ext_resource type="TileSet" uid="uid://dnqbs8fwdw5nd" path="res://assets/new_tile_set.tres" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c010d86yrylbh" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cf4i7142mjhhy" path="res://scenes/pause.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://mqj6a3igojhr" path="res://hud.tscn" id="5_tbgi4"]
 
 [node name="main" type="Node2D" unique_id=2127923537]
 
@@ -19,3 +21,8 @@ collision_enabled = false
 
 [node name="Player" parent="." unique_id=26899802 instance=ExtResource("3_sugp2")]
 position = Vector2(291.00003, 432.00003)
+
+[node name="Pause" parent="." unique_id=1742302891 instance=ExtResource("4_jyhfs")]
+visible = false
+
+[node name="HUD" parent="." unique_id=456743804 instance=ExtResource("5_tbgi4")]

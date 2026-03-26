@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cf4i7142mjhhy"]
+
+[ext_resource type="Script" uid="uid://bn67vv6t4dxd7" path="res://scenes/pause.gd" id="1_f1d2v"]
+[ext_resource type="Texture2D" uid="uid://cqm2rk11fxhob" path="res://assets/galician фон.png" id="2_r8yp4"]
+[ext_resource type="FontFile" uid="uid://ckly0cbko8prb" path="res://assets/RubikDistressed-Regular.ttf" id="3_m0klm"]
+
+[node name="Pause" type="CanvasLayer" unique_id=1742302891]
+process_mode = 3
+script = ExtResource("1_f1d2v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=620191162]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -13.0
+offset_right = 25.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r8yp4")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2082707052]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.050980393, 0.050980393, 0.76862746)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1536835254]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -324.5
+offset_right = 577.0
+offset_bottom = 324.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1543795177]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=131179192]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=362676192]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_m0klm")
+theme_override_font_sizes/font_size = 41
+text = "Galician corridor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=1322762832]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Resume" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=2138373061]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84434694, 0.5057285, 0.35353836, 1)
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=876694098]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.5058824, 0.3529412, 1)
+text = "Main menu"
+
+[node name="Quit" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer" unique_id=234354322]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84313726, 0.5058824, 0.3529412, 1)
+text = "Quit"
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://pyf4k75p773c"]
+
+[ext_resource type="Script" uid="uid://dwguvmm2dp60l" path="res://control.gd" id="1_r67kn"]
+[ext_resource type="Texture2D" uid="uid://cqm2rk11fxhob" path="res://assets/galician фон.png" id="2_brbbq"]
+[ext_resource type="FontFile" uid="uid://ckly0cbko8prb" path="res://assets/RubikDistressed-Regular.ttf" id="3_8n18e"]
+[ext_resource type="FontFile" uid="uid://7q8uxykhgj1a" path="res://assets/Rubik-VariableFont_wght.ttf" id="4_tjwpk"]
+
+[node name="Control" type="Control" unique_id=1307080114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r67kn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1014062606]
+layout_mode = 1
+offset_right = 1156.0
+offset_bottom = 675.0
+texture = ExtResource("2_brbbq")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1697602639]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1158.0
+offset_bottom = 651.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=710513580]
+layout_mode = 2
+size_flags_stretch_ratio = 11.37
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=22008869]
+layout_mode = 2
+
+[node name="name" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer" unique_id=1581920123]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.74509805)
+theme_override_constants/paragraph_spacing = 6
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("3_8n18e")
+theme_override_font_sizes/font_size = 41
+text = "Galician corridor"
+
+[node name="Start" type="Button" parent="CenterContainer/VBoxContainer" unique_id=796969356]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tjwpk")
+text = "Start"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=229140146]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tjwpk")
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
