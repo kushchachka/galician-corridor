@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://dnqbs8fwdw5nd" path="res://assets/new_tile_set.tres" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c010d86yrylbh" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cf4i7142mjhhy" path="res://scenes/pause.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://mqj6a3igojhr" path="res://hud.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://mqj6a3igojhr" path="res://scenes/hud.tscn" id="5_tbgi4"]
 
 [node name="main" type="Node2D" unique_id=2127923537]
 
