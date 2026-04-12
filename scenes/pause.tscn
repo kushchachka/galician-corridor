@@ -6,6 +6,7 @@
 
 [node name="Pause" type="CanvasLayer" unique_id=1742302891]
 process_mode = 3
+layer = 10
 script = ExtResource("1_f1d2v")
 
 [node name="Panel" type="Control" parent="." unique_id=1914958379]
@@ -13,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=620191162]
 layout_mode = 1
@@ -25,6 +27,7 @@ offset_right = 1112.0
 offset_bottom = 650.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_m0klm")
 expand_mode = 1
 
@@ -37,6 +40,7 @@ offset_right = 1149.0
 offset_bottom = 643.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.050980393, 0.050980393, 0.050980393, 0.6156863)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1536835254]

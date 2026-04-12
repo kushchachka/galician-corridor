@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var quit_button = $"Panel/HBoxContainer/MarginContainer/VBoxContainer/Quit"
 
 func _ready() -> void:
+	
 	resume_button.pressed.connect(_on_resume_pressed)
 	main_menu_button.pressed.connect(_on_main_menu_pressed) 
 	quit_button.pressed.connect(_on_quit_pressed)
@@ -44,7 +45,7 @@ func _on_resume_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Control.tscn")
+	get_tree().change_scene_to_file("res://scenes/control.tscn")
 
 
 func _on_quit_pressed() -> void:
