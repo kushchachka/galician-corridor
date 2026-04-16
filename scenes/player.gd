@@ -1,64 +1,46 @@
 extends CharacterBody2D
 
-@export var speed = 150
-@onready var anim = $AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D
+
+const SPEED = 200.0
+const JUMP_VELOCITY = -400.0
 
 var is_attacking = false
-var is_protecting = false
-var keys = 0  # Змінна для підрахунку ключів
 
-func _physics_process(_delta):
-	# Якщо атакуємо або захищаємось — не рухаємось
-	if is_attacking or is_protecting:
-		velocity = Vector2.ZERO 
-	else:
-		handle_movement()
-	
-	move_and_slide()
-	update_animations()
+func _physics_process(delta):
 
-func handle_movement():
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = direction * speed
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
-func _input(event):
-	# Атака
-	if event.is_action_pressed("attack") and not is_attacking:
-		attack()
-	
-	# Захист
-	if event.is_action_pressed("protection"):
-		is_protecting = true
-	elif event.is_action_released("protection"):
-		is_protecting = false
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		is_attacking = true
+		sprite.play("attack")
 
-func attack():
-	is_attacking = true
-	anim.play("attack") 
-	await get_tree().create_timer(0.5).timeout
-	is_attacking = false
-
-func update_animations():
-	if is_attacking: return
-	
-	if is_protecting:
-		anim.play("protection")
+	if is_attacking:
+		velocity.x = 0
+		move_and_slide()
 		return
 
-	if velocity.length() > 0:
-		anim.play("walk")
-		anim.flip_h = velocity.x < 0
+	var direction = Input.get_axis("ui_left", "ui_right")
+
+	if direction != 0:
+		velocity.x = direction * SPEED
+		sprite.play("walk")
+
+		if direction < 0:
+			sprite.flip_h = true
+		else:
+			sprite.flip_h = false
 	else:
-		anim.play("idle")
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		sprite.play("idle")
 
-# Функція додавання ключа
-func add_key():
-	keys += 1
-	print("Ключі підібрано! Всього:", keys)
+	move_and_slide()
 
-# Перевірка для дверей
-func use_key() -> bool:
-	if keys > 0:
-		keys -= 1
-		return true
-	return false
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "attack":
+		is_attacking = false
+		sprite.play("idle")
