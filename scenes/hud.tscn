@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://mqj6a3igojhr"]
 
 [ext_resource type="Script" uid="uid://bdh8c18unng0w" path="res://scenes/hud.gd" id="1_37p78"]
-[ext_resource type="FontFile" uid="uid://2nquu5ufvu1v" path="res://assets/Girl_3/DigitalDisco.ttf" id="2_64ctp"]
 
 [node name="HUD" type="CanvasLayer" unique_id=456743804]
 script = ExtResource("1_37p78")
@@ -17,10 +16,6 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=563402341]
+[node name="Label" type="Label" parent="MarginContainer" unique_id=90228947]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_64ctp")
-theme_override_font_sizes/font_size = 16
-text = "Бали: 0"
 vertical_alignment = 2

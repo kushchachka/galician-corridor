@@ -1,7 +1,11 @@
 extends CanvasLayer
 
-var time_elapsed: float = 0.0
+@onready var label = $MarginContainer/Label
+var player
 
-func _process(delta: float) -> void:
-	time_elapsed += delta
-	$MarginContainer/ScoreLabel.text = "Час у коледжі: " + str(int(time_elapsed)) + "с"
+func _ready():
+	player = get_tree().get_first_node_in_group("player")
+
+func _process(delta):
+	if player:
+		label.text = "Ключі: " + str(player.keys)

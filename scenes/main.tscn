@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c010d86yrylbh" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cf4i7142mjhhy" path="res://scenes/pause.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://mqj6a3igojhr" path="res://scenes/hud.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bv3jgdqrdafyl" path="res://scenes/professor.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dkpg1dab4a0vd" path="res://scenes/item.tscn" id="7_o6xl0"]
 
 [node name="main" type="Node2D" unique_id=2127923537]
 
@@ -26,3 +28,8 @@ position = Vector2(291.00003, 432.00003)
 visible = false
 
 [node name="HUD" parent="." unique_id=456743804 instance=ExtResource("5_tbgi4")]
+
+[node name="Professor" parent="." unique_id=347053193 instance=ExtResource("6_tefeu")]
+position = Vector2(1045, 431)
+
+[node name="item" parent="." unique_id=883844188 instance=ExtResource("7_o6xl0")]
