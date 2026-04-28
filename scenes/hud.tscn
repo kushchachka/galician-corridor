@@ -1,21 +1,44 @@
 [gd_scene format=3 uid="uid://mqj6a3igojhr"]
 
 [ext_resource type="Script" uid="uid://bdh8c18unng0w" path="res://scenes/hud.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://cam0nxthjr0mw" path="res://assets/BRONZE/Key 15 - BRONZE - frame0000.png" id="2_oo0fn"]
 
 [node name="HUD" type="CanvasLayer" unique_id=456743804]
 script = ExtResource("1_37p78")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1390090448]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1678076957]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="MarginContainer" unique_id=90228947]
+[node name="KeysContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1165006080]
 layout_mode = 2
-vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/KeysContainer" unique_id=1700523704]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/KeysContainer" unique_id=1509638842]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/KeysContainer" unique_id=1848128388]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+
+[node name="TextureRect4" type="TextureRect" parent="PanelContainer/KeysContainer" unique_id=262638629]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+
+[node name="TextureRect5" type="TextureRect" parent="PanelContainer/KeysContainer" unique_id=516621877]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_oo0fn")

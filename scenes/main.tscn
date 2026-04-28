@@ -4,16 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cf4i7142mjhhy" path="res://scenes/pause.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://mqj6a3igojhr" path="res://scenes/hud.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://c1puofjuoosar" path="res://scenes/level.tscn" id="6_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://bv3jgdqrdafyl" path="res://scenes/professor.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dkpg1dab4a0vd" path="res://scenes/item.tscn" id="7_o6xl0"]
 
 [node name="main" type="Node2D" unique_id=2127923537]
 
 [node name="level" parent="." unique_id=358681824 instance=ExtResource("6_o6xl0")]
-
-[node name="Professor" parent="level" unique_id=347053193 instance=ExtResource("6_tefeu")]
-position = Vector2(51, 446)
-scale = Vector2(1, 1)
 
 [node name="Player" parent="level" unique_id=26899802 instance=ExtResource("3_sugp2")]
 position = Vector2(503.99997, 446)
@@ -23,4 +18,17 @@ visible = false
 
 [node name="HUD" parent="." unique_id=456743804 instance=ExtResource("5_tbgi4")]
 
-[node name="item" parent="." unique_id=883844188 instance=ExtResource("7_o6xl0")]
+[node name="key1" parent="." unique_id=883844188 instance=ExtResource("7_o6xl0")]
+position = Vector2(269, 7)
+
+[node name="key2" parent="." unique_id=526848114 instance=ExtResource("7_o6xl0")]
+position = Vector2(1507, -11)
+
+[node name="key3" parent="." unique_id=1638491515 instance=ExtResource("7_o6xl0")]
+position = Vector2(2924, 422)
+
+[node name="key4" parent="." unique_id=443700229 instance=ExtResource("7_o6xl0")]
+position = Vector2(4867, 219)
+
+[node name="key5" parent="." unique_id=1506752348 instance=ExtResource("7_o6xl0")]
+position = Vector2(622, 491)
